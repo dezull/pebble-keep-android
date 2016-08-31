@@ -34,8 +34,8 @@ public class RootUtil {
 	{
 		try {
 			File resultFile = new File(context.getCacheDir(), "keep.db");
-			String cmdLine = "cat /data/data/com.google.android.keep/databases/keep.db > " + resultFile.getAbsolutePath();
-			
+			String cmdLine = "cp --preserve=a /data/data/com.google.android.keep/databases/keep.db " + resultFile.getAbsolutePath();
+
 			String[] args = new String[] {"su", "-c", cmdLine };
 			Process proces = Runtime.getRuntime().exec(args);
 
