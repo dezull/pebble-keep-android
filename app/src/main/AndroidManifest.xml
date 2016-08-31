@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.matejdro.pebblekeep"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="Keep for Pebble" >
+        <receiver android:name="com.matejdro.pebblekeep.DataReceiver" >
+            <intent-filter>
+                <action android:name="com.getpebble.action.app.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="DummyActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="KeepReaderService"></service>
+    </application>
+
+</manifest>
